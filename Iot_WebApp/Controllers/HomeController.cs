@@ -1,32 +1,24 @@
-﻿using Iot_WebApp.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using Iot_WebApp.Models;
 
-namespace Iot_WebApp.Controllers
+namespace IoTWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly HttpClient _httpClient;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(HttpClient httpClient)
         {
-            _logger = logger;
+            _httpClient = httpClient;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var response = await _httpClient.GetAsync("https://localhost:9000/api/sensordata");
+            var data = await response.Content.ReadAsStringAsync();
+            var sensorData = JsonSerializer.Deserialize<List<SensorData>>(data);
+            return View(sensorData);
         }
     }
 }
