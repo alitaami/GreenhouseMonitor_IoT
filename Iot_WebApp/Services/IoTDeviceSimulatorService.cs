@@ -4,11 +4,11 @@ using Iot_WebApp.Models;
 
 namespace IoTWebApp.Services
 {
-    public class IoTDeviceSimulatorService : BackgroundService
+    public class IotDeviceSimulatorService : BackgroundService
     {
         private readonly IServiceProvider _serviceProvider;
 
-        public IoTDeviceSimulatorService(IServiceProvider serviceProvider)
+        public IotDeviceSimulatorService(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
         }
@@ -43,7 +43,7 @@ namespace IoTWebApp.Services
                     Console.WriteLine("Failed to send data");
                 }
 
-                await Task.Delay(10000, stoppingToken); // Simulate every 10 seconds
+                await Task.Delay(5000, stoppingToken); // Simulate every 5 seconds
             }
         }
     }

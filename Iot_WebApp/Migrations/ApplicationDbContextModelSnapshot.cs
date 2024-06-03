@@ -29,7 +29,7 @@ namespace IotWebApp.Migrations
                     b.Property<decimal>("Temperature")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTimeOffset>("Timestamp")
+                    b.Property<DateTime>("Timestamp")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

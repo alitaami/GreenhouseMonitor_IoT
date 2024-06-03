@@ -19,7 +19,7 @@ namespace Iot_WebApp
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllersWithViews();
-            services.AddHostedService<IoTDeviceSimulatorService>(); // Register the background service
+            services.AddHostedService<IotDeviceSimulatorService>(); // Register the background service
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

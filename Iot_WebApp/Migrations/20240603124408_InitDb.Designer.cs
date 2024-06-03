@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IotWebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240603121158_InitDb")]
+    [Migration("20240603124408_InitDb")]
     partial class InitDb
     {
         /// <inheritdoc />
@@ -32,7 +32,7 @@ namespace IotWebApp.Migrations
                     b.Property<decimal>("Temperature")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTimeOffset>("Timestamp")
+                    b.Property<DateTime>("Timestamp")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

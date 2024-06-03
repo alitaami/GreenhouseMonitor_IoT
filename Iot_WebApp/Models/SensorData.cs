@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public decimal Temperature { get; set; }
         public decimal Humidity { get; set; }
-        public DateTimeOffset Timestamp { get; set; }  
+        public DateTime Timestamp { get; set; }  
     }
 }

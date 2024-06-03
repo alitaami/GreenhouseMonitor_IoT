@@ -19,7 +19,7 @@ namespace IotWebApp.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Temperature = table.Column<decimal>(type: "TEXT", nullable: false),
                     Humidity = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Timestamp = table.Column<DateTimeOffset>(type: "TEXT", nullable: false)
+                    Timestamp = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
