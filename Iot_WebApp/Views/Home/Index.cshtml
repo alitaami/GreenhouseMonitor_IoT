@@ -46,11 +46,23 @@
             {
                 // Convert Gregorian date to Shamsi date
                 var shamsiDate = $"{persianCalendar.GetYear(item.Timestamp)}/{persianCalendar.GetMonth(item.Timestamp).ToString("00")}/{persianCalendar.GetDayOfMonth(item.Timestamp).ToString("00")} {item.Timestamp:HH:mm:ss}";
-                <tr>
-                    <td>@item.Temperature</td>
-                    <td>@item.Humidity</td>
-                    <td>@shamsiDate</td>
-                </tr>
+
+                if (@item.Temperature > 35)
+                {
+                    <tr style="background-color:red">
+                        <td>@item.Temperature</td>
+                        <td>@item.Humidity</td>
+                        <td>@shamsiDate</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@item.Temperature</td>
+                        <td>@item.Humidity</td>
+                        <td>@shamsiDate</td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
