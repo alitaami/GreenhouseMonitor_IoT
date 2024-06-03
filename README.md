@@ -1,11 +1,13 @@
 Overview:
 
 This project is a web application designed for monitoring temperature and humidity data from IoT sensors. It provides a user-friendly interface to visualize the collected data.
+
 Features:
 
-    Display real-time temperature and humidity data from IoT sensors. 
+    Display real-time temperature and humidity data from IoT sensors.  
+    Additional features such as data filtering and sorting.
     Utilize Bootstrap for a responsive and visually appealing UI.
-    Future capability to integrate low-level language for performance optimization.
+    Future capability to integrate low-level language for performance optimization. 
 
 How to Run:
 
@@ -29,7 +31,6 @@ Usage:
 Future Enhancements:
 
     Implement low-level language optimizations for improved performance.
-    Add additional features such as data filtering and sorting.
     Enhance the UI with more interactive elements and visualizations.
 
 Contributing:
