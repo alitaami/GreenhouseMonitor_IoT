@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using Iot_WebApp.Models;
+using Newtonsoft.Json;
 
 namespace IoTWebApp.Controllers
 {
@@ -15,9 +16,9 @@ namespace IoTWebApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var response = await _httpClient.GetAsync("https://localhost:9000/api/sensordata");
+            var response = await _httpClient.GetAsync("https://localhost:7247/api/sensordata");
             var data = await response.Content.ReadAsStringAsync();
-            var sensorData = JsonSerializer.Deserialize<List<SensorData>>(data);
+            var sensorData = JsonConvert.DeserializeObject<List<SensorData>>(data);
             return View(sensorData);
         }
     }

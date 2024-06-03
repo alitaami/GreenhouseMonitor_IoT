@@ -32,7 +32,7 @@ namespace IoTWebApp.Services
 
                 var content = new StringContent(JsonSerializer.Serialize(sensorData), Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync("https://localhost:9000/api/sensordata", content);
+                var response = await client.PostAsync("https://localhost:7247/api/sensordata", content);
 
                 if (response.IsSuccessStatusCode)
                 {

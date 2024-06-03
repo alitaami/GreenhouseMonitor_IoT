@@ -3,8 +3,8 @@
     public class SensorData
     {
         public int Id { get; set; }
-        public float Temperature { get; set; }
-        public float Humidity { get; set; }
-        public DateTime Timestamp { get; set; } = DateTime.Now;
+        public decimal Temperature { get; set; }
+        public decimal Humidity { get; set; }
+        public DateTimeOffset Timestamp { get; set; }  
     }
 }

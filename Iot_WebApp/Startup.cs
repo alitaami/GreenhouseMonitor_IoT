@@ -1,4 +1,5 @@
 ﻿using Iot_WebApp.Data;
+using IoTWebApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Iot_WebApp
