@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Iot_WebApp.Data;
 using Iot_WebApp.Models;
@@ -32,7 +32,10 @@ namespace IoTWebApp.Controllers
         [HttpGet]
         public async Task<IActionResult> GetSensorData()
         {
-            var data = await _context.SensorData.ToListAsync();
+            var data = await _context
+                                    .SensorData
+                                    .OrderByDescending(s=>s.Id)
+                                    .ToListAsync();
             return Ok(data);
         }
     }

@@ -1,6 +1,9 @@
 ﻿using System.Text;
 using System.Text.Json;
+using Iot_WebApp.Common;
+using Iot_WebApp.Common.Utilities;
 using Iot_WebApp.Models;
+using Microsoft.Extensions.DependencyModel;
 
 namespace IoTWebApp.Services
 {
@@ -20,8 +23,26 @@ namespace IoTWebApp.Services
 
             while (!stoppingToken.IsCancellationRequested)
             {
-                var temperature = random.Next(-10, 35);
-                var humidity = random.Next(20, 80);
+                var temperature = random.Next(20, 40);
+                var humidity = random.Next(25, 80);
+
+                if (temperature > 35)
+                {
+                    // Compose the email body in Persian
+                    string subject = Resource.EmailSubject;
+                    string body = Resource.EmailBody;
+
+                    // Send the email
+                    try
+                    {
+                        await SendMail.SendAsync("alitaami81@gmail.com", subject, body);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle any exceptions
+                        Console.WriteLine("An error occurred while sending the email: " + ex.Message);
+                    }
+                }
 
                 var sensorData = new SensorData
                 {
