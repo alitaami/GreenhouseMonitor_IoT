@@ -1,4 +1,5 @@
 ﻿using Iot_WebApp.Data;
+using IoTWebApp.Hubs;
 using IoTWebApp.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,7 @@ namespace Iot_WebApp
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllersWithViews();
+            services.AddSignalR();
             services.AddHostedService<IotDeviceSimulatorService>(); // Register the background service
         }
 
@@ -37,6 +39,7 @@ namespace Iot_WebApp
             {
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapControllers();
+                endpoints.MapHub<SensorDataHub>("/sensorDataHub");
             });
         }
     }

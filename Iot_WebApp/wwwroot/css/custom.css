@@ -1,4 +1,6 @@
-﻿/* Add custom CSS rules */
+﻿/* Custom CSS for Monitoring Panel */
+
+/* General Table Styling */
 .table {
     width: 100%;
     margin-bottom: 1rem;
@@ -16,6 +18,8 @@
     .table thead th {
         vertical-align: bottom;
         border-bottom: 2px solid #dee2e6;
+        background-color: #343a40;
+        color: white;
     }
 
     .table tbody + tbody {
@@ -24,4 +28,78 @@
 
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Highlighting Rows with Specific Conditions */
+.table-danger {
+    background-color: #f8d7da !important;
+}
+
+/* Card Styling */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsive Form Styling */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+    .form-row .col,
+    .form-row .col-auto {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+
+/* Header Styling */
+h1 {
+    font-family: 'IRANSansWeb', sans-serif;
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 1rem;
+}
+
+/* Ensure container doesn't overflow on small screens */
+.container {
+    padding: 0 15px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Customize Bootstrap Button */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+/* Chart Container Styling */
+.chart-container {
+    position: relative;
+    height: 40vh;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        width: 100%;
+    }
 }
