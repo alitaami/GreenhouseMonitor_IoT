@@ -57,4 +57,33 @@
             }
         }
     });
-});
+
+      // Export to Excel button click event
+      document.getElementById('exportToExcelBtn').addEventListener('click', exportToExcel);
+  });
+
+// Export to Excel function
+function exportToExcel() {
+    // Get the table data
+    var table = document.querySelector('table');
+    var rows = table.querySelectorAll('tr');
+
+    // Prepare the Excel data
+    var data = [];
+    for (var i = 0; i < rows.length; i++) {
+        var row = [];
+        var cols = rows[i].querySelectorAll('td, th');
+        for (var j = 0; j < cols.length; j++) {
+            row.push(cols[j].innerText);
+        }
+        data.push(row);
+    }
+
+    // Create a new Excel workbook
+    var wb = XLSX.utils.book_new();
+    var ws = XLSX.utils.aoa_to_sheet(data);
+    XLSX.utils.book_append_sheet(wb, ws, "SensorData");
+
+    // Save the Excel file
+    XLSX.writeFile(wb, "SensorData.xlsx");
+}

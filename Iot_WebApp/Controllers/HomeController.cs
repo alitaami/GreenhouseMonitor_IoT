@@ -17,8 +17,10 @@ namespace IoTWebApp.Controllers
             _httpClient = httpClient;
         }
 
-        public async Task<IActionResult> Index(decimal? minTemperature, decimal? maxTemperature, decimal? minHumidity, decimal? maxHumidity)
+        public async Task<IActionResult> Index(int? page, int pageSize = 10, decimal? minTemperature = null, decimal? maxTemperature = null, decimal? minHumidity = null, decimal? maxHumidity = null)
         {
+            int pageNumber = page ?? 1;
+
             var response = await _httpClient.GetAsync("https://localhost:7247/api/sensordata");
             var data = await response.Content.ReadAsStringAsync();
             var sensorData = JsonConvert.DeserializeObject<List<SensorData>>(data);
@@ -44,7 +46,13 @@ namespace IoTWebApp.Controllers
                 sensorData = sensorData.Where(s => s.Humidity <= maxHumidity.Value).ToList();
             }
 
-            return View(sensorData);
-        } 
+            var paginatedData = sensorData.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+
+            ViewBag.PageNumber = pageNumber;
+            ViewBag.PageSize = pageSize;
+            ViewBag.TotalItems = sensorData.Count;
+
+            return View(paginatedData);
+        }
     }
 }
