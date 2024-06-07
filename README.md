@@ -37,9 +37,11 @@ Future Enhancements:
 Contributing:
 
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. Be sure to adhere to the project's coding standards and guidelines.
+
 License:
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
 Acknowledgments:
 
     Bootstrap CSS: https://getbootstrap.com/
@@ -47,6 +49,6 @@ Acknowledgments:
 
 ----
 
- ![Screenshot (12)](https://github.com/alitaami/Manitoring_IOT/assets/116227297/2a9fcf53-0779-4201-8d27-034bbe155bbf)
- ![Screenshot (13)](https://github.com/alitaami/Manitoring_IOT/assets/116227297/8cbb7071-de32-4e2c-aa68-aebff2b25dd7)
+ ![Screenshot (14)](https://github.com/alitaami/Manitoring_IOT/assets/116227297/1b4bc2ba-6854-417a-866e-200d673c7539)
+  
 
