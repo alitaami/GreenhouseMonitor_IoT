@@ -40,10 +40,6 @@ Contributing:
 
 Contributions are welcome! Please fork the repository, make your changes, and submit a pull request. Be sure to adhere to the project's coding standards and guidelines.
 
-License:
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 Acknowledgments:
 
     Bootstrap CSS: https://getbootstrap.com/
