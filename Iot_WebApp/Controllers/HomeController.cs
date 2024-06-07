@@ -45,8 +45,6 @@ namespace IoTWebApp.Controllers
             }
 
             return View(sensorData);
-        }
-
-        
+        } 
     }
 }

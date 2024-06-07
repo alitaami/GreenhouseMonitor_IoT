@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+﻿  document.addEventListener('DOMContentLoaded', function () {
     // Prepare the data for the charts
     var sensorData = JSON.parse(document.getElementById('sensorData').textContent);
 
