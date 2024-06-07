@@ -44,3 +44,9 @@ Acknowledgments:
 
     Bootstrap CSS: https://getbootstrap.com/
     PersianCalendar: Microsoft .NET Documentation
+
+----
+
+ ![Screenshot (12)](https://github.com/alitaami/Manitoring_IOT/assets/116227297/2a9fcf53-0779-4201-8d27-034bbe155bbf)
+ ![Screenshot (13)](https://github.com/alitaami/Manitoring_IOT/assets/116227297/8cbb7071-de32-4e2c-aa68-aebff2b25dd7)
+
