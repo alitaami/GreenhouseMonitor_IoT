@@ -35,7 +35,7 @@ namespace IoTWebApp.Services
                     // Send the email
                     try
                     {
-                        await SendMail.SendAsync("alitaami81@gmail.com", subject, body);
+                        await SendMail.SendAsync("test@gmail.com", subject, body);
                     }
                     catch (Exception ex)
                     {
