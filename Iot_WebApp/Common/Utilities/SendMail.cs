@@ -19,7 +19,7 @@ namespace Iot_WebApp.Common.Utilities
                 {
                     smtpServer.UseDefaultCredentials = false;
                     smtpServer.Port = 587;
-                    smtpServer.Credentials = new NetworkCredential("prozheali@gmail.com", "ayszpqnyevqvbujn");
+                    smtpServer.Credentials = new NetworkCredential("Replace_Your_Gmail", "Replace_Your_Pass");
                     smtpServer.EnableSsl = true;
 
                     try
